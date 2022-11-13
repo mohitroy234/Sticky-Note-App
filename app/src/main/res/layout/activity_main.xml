@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the notes"
+        android:textColor="@color/white"
+        android:background="@color/background"
+        android:layout_above="@+id/fschange"
+        android:textColorHint="@color/white"
+        android:layout_alignParentTop="true"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:id="@+id/edittext" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/floatingbutton"
+        android:layout_above="@+id/allfunction"
+        android:onClick="SaveButton"
+        android:backgroundTint="@color/teal_700"
+        android:src="@drawable/ic_baseline_save_24"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/allfunction"
+        android:orientation="horizontal"
+        android:id="@+id/fschange"
+        android:background="@color/purple_500"
+        android:layout_toStartOf="@+id/floatingbutton"
+        android:weightSum="3">
+        <Button
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:id="@+id/decreasesize"/>
+        <TextView
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:id="@+id/fontsize"/>
+        <Button
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:id="@+id/increasesize"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/allfunction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:id="@+id/bold"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="U"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:id="@+id/underline"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="I"
+            android:textStyle="italic"
+            android:id="@+id/italic"/>
+   </LinearLayout>
+</RelativeLayout>
